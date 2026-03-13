@@ -1,5 +1,6 @@
 html {
-	box-sizing: border-box
+	box-sizing: border-box;
+	--archive-banner-height: 58px
 }
 
 *,
@@ -13,9 +14,66 @@ body {
 	height: 100%
 }
 
+body {
+	margin: 0;
+	padding-top: var(--archive-banner-height)
+}
+
 main {
-	min-height: 100%;
-	height: 100%
+	min-height: calc(100vh - var(--archive-banner-height));
+	height: calc(100vh - var(--archive-banner-height))
+}
+
+#archive-banner {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2000;
+	display: flex;
+	align-items: flex-start;
+	gap: 1em;
+	padding: 0.75em 1.25em 0.7em;
+	background: #d6e5ea;
+	border-bottom: 1px solid #9eb8c2;
+	color: #1c1c1c;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08)
+}
+
+.archive-banner-icon {
+	flex: 0 0 auto;
+	width: 1.75em;
+	height: 1.75em;
+	border-radius: 50%;
+	background: #005a7a;
+	color: #ffffff;
+	font-weight: bold;
+	line-height: 1.75em;
+	text-align: center
+}
+
+.archive-banner-content {
+	min-width: 0
+}
+
+.archive-banner-title,
+.archive-banner-text {
+	margin: 0
+}
+
+.archive-banner-title {
+	font-size: 1.05em;
+	font-weight: bold
+}
+
+.archive-banner-text {
+	margin-top: 0.2em
+}
+
+.archive-banner-text a {
+	color: #005073;
+	font-weight: bold;
+	word-break: break-word
 }
 
 .switch {
@@ -395,7 +453,7 @@ tbody {
 	#toggle-pane-link {
 		display: block;
 		position: fixed;
-		top: 0;
+		top: var(--archive-banner-height);
 		left: 0;
 		width: 100%;
 		height: 7vh;
@@ -410,5 +468,20 @@ tbody {
 	.outline-control,
 	.coordinate-search-control {
 		display: none
+	}
+	#archive-banner {
+		padding: 0.9em 1em
+	}
+	.archive-banner-title {
+		font-size: 1em
+	}
+	.archive-banner-text {
+		font-size: 0.95em
+	}
+}
+
+@media screen and (max-width: 767px) {
+	html {
+		--archive-banner-height: 92px
 	}
 }
