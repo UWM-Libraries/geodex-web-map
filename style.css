@@ -1,6 +1,6 @@
 html {
 	box-sizing: border-box;
-	--archive-banner-height: 58px
+	--archive-banner-height: 68px
 }
 
 *,
@@ -33,10 +33,12 @@ main {
 	display: flex;
 	align-items: flex-start;
 	gap: 1em;
-	padding: 0.75em 1.25em 0.7em;
+	padding: 10px 1.25em 9px;
 	background: #d6e5ea;
 	border-bottom: 1px solid #9eb8c2;
 	color: #1c1c1c;
+	font-size: 16px;
+	line-height: 1.4;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08)
 }
 
@@ -47,6 +49,7 @@ main {
 	border-radius: 50%;
 	background: #005a7a;
 	color: #ffffff;
+	font-size: 14px;
 	font-weight: bold;
 	line-height: 1.75em;
 	text-align: center
@@ -482,6 +485,6 @@ tbody {
 
 @media screen and (max-width: 767px) {
 	html {
-		--archive-banner-height: 92px
+		--archive-banner-height: 104px
 	}
 }
